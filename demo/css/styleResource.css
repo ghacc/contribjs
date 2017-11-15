@@ -1,0 +1,8 @@
+body {
+    background-color: lightskyblue;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.css-not-loaded-info {
+    display: none;
+}

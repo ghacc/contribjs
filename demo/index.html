@@ -1,0 +1,27 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Demo page for ContribJS</title>
+    <link rel="stylesheet" href="css/styleResource.css">
+    <script src="js/javascriptResource.js"></script>
+    <script>navigator.serviceWorker.register('/sw.js').then(function (registration) {
+            // Registration was successful
+            console.log('ServiceWorker registration successful with scope: ', registration.scope);
+        }, function (err) {
+            // registration failed :(
+            console.log('ServiceWorker registration failed: ', err);
+        });</script>
+</head>
+
+<body>
+    <h1>Demo</h1>
+    <!-- Check loading image through css url() -->
+    <h2 class="css-not-loaded-info" style="color: red;font-size: 3em;">CSS resource was not loaded properly!</h2>
+    <h2>Image Loading</h2>
+    <img src="img/lucian-moldovan-180777.jpg" />
+</body>
+
+</html>

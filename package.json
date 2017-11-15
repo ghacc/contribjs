@@ -1,0 +1,38 @@
+{
+  "//": "Here is a sample file https://github.com/Microsoft/TypeScript-Node-Starter/blob/master/package.json",
+  "name": "ContribJS",
+  "version": "0.0.1",
+  "description": "Let visitors contribute to page serving.",
+  "main": "main.js",
+  "author": "Thanos",
+  "license": "MIT",
+  "scripts": {
+    "start": "npm run build && npm run watch",
+    "demo": "concurrently \"npm run watch\" \"nodemon --watch demo demo/demo.js\"",
+    "build": "npm run build-ts && npm run tslint && shx cp -r src/client dist",
+    "serve": "nodemon dist/main.js",
+    "watch": "concurrently -k -c \"red.bold,green.bold\" \"npm run watch-ts\" \"npm run serve-debug\"",
+    "test": "jest --forceExit",
+    "build-ts": "tsc",
+    "watch-ts": "tsc -w",
+    "tslint": "tslint -c tslint.json -p tsconfig.json",
+    "debug": "npm run build && npm run watch-debug",
+    "serve-debug": "nodemon --watch dist --inspect dist/main.js",
+    "watch-debug": "concurrently -k -p \"[{name}]\" -n \"TypeScript,Node\" -c \"cyan.bold,green.bold\" \"npm run watch-ts\" \"npm run serve-debug\""
+  },
+  "devDependencies": {
+    "concurrently": "^3.5.0",
+    "express": "^4.16.1",
+    "nodemon": "^1.11.0",
+    "shx": "^0.2.2",
+    "tslint": "^5.7.0",
+    "typescript": "^2.5.3",
+    "watch": "^1.0.2"
+  },
+  "dependencies": {
+    "@types/connect": "^3.4.31",
+    "@types/http-proxy": "^1.12.1",
+    "connect": "^3.6.5",
+    "http-proxy": "^1.16.2"
+  }
+}
